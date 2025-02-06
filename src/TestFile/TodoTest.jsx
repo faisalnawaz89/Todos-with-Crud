@@ -68,7 +68,7 @@ const TodoTest = () => {
   return (
     <div>
         <div className='bg-slate-200 w-full min-h-screen flex flex-col'>
-            <div className='w-[50%] m-auto max-h-min bg-white rounded-md shadow-md py-4 px-4'>
+            <div className='sm:w-[50%] w-[80%] m-auto max-h-min bg-white rounded-md shadow-md py-4 px-4'>
                 <h2 className='text-xl text-left font-semibold'>Todo List</h2>
                 <div className='mt-3'>
                     <form  onSubmit={submitHandler}>
