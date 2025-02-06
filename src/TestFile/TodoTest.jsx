@@ -68,7 +68,7 @@ const TodoTest = () => {
   return (
     <div>
         <div className='bg-slate-200 w-full min-h-screen flex flex-col'>
-            <div className='sm:w-[50%] w-[80%] m-auto'>
+            <div className='sm:w-[50%] w-[95%] m-auto'>
             <div className='max-h-min bg-white rounded-md shadow-md py-4 px-4'>
                 <h2 className='text-xl text-left font-semibold'>Todo List</h2>
                 <div className='mt-3'>
@@ -96,9 +96,9 @@ const TodoTest = () => {
                             type="checkbox" className="mr-2" />
                             <h3 
                             onClick={()=>checkTodoStatus(index)}
-                            className={`cursor-pointer font-semibold ${item.status ? 'line-through text-gray-500' : 'text-gray-800'}`}> {item.todoList} </h3>
+                            className={`cursor-pointer font-semibold sm:text-md text-sm ${item.status ? 'line-through text-gray-500' : 'text-gray-800 '}`}> {item.todoList} </h3>
                         </div>
-                        <div className='flex items-center justify-center gap-3 bg-gray-500/30 leading-3 rounded-full px-3 py-1'>
+                        <div className='flex items-center justify-center gap-2 bg-gray-500/30 leading-3 rounded-full px-3 py-1'>
 
                             <button onClick={()=>editTodoIndex(index)}>
                                 <box-icon type='solid' name='edit' color='white'></box-icon>
