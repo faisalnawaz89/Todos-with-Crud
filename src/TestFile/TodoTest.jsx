@@ -68,7 +68,8 @@ const TodoTest = () => {
   return (
     <div>
         <div className='bg-slate-200 w-full min-h-screen flex flex-col'>
-            <div className='sm:w-[50%] w-[80%] m-auto max-h-min bg-white rounded-md shadow-md py-4 px-4'>
+            <div className='sm:w-[50%] w-[80%] m-auto'>
+            <div className='max-h-min bg-white rounded-md shadow-md py-4 px-4'>
                 <h2 className='text-xl text-left font-semibold'>Todo List</h2>
                 <div className='mt-3'>
                     <form  onSubmit={submitHandler}>
@@ -110,6 +111,9 @@ const TodoTest = () => {
                 )): <h3 className='mt-2 text-xs text-gray-500 text-center'>No, todo item are found!</h3>}
                 
             </div>
+            <h3 className='text-sm text-gray-500 font-medium mt-1'>* App Dedicated to Anjali Nawaz <small className='font-mono text-gray-400'>v.1 </small></h3>
+        </div>
+
         </div>
     </div>
   )
