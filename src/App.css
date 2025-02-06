@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.heroSlider {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  background: #ddd;
+}
+
+.accordion-tab {
+  background: #d1d1d1;
+  box-shadow: -1px 0px 12px 0px #0000002b;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin: 6px;
+}
+.accordion-content {
+  margin: 10px;
+  display: none;
+}
+
+.active>.accordion-content{
+  display: block;
+}
+
+.tabmenu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.close{
+  display: none;
+}
+.tabmenu li{
+  background: #eee;
+  padding: 5px 15px;
+  border-right: 1px solid #cbcbcb;
+  cursor: pointer;
+}
+.tabmenu li:last-child{
+  border-right: 0;
+}
+.tab-inner {
+  border: 1px solid #cbcbcb;
+  padding: 10px 15px;
+  background: #eeeeee;
+  display: none;
+}
+.active{
+  display: block;
+}
+.selected{
+  background-color: #000 !important;
+  color: #fff;
+  transition: .5s;
+}
+.menu{
+  position: fixed;
+  background: yellow;
+  bottom: 0;
+  top: 0;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .5s ease;
+  left: -100%;
+}
+.menu ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.open{
+  left: 0;
+}
+.tabBtn{
+    border: 0;
+    background: #000;
+    color: #fff;
+    padding: 4px 6px;
+    position: fixed;
+    right: 0;
+    margin: 15px;
+}
+
+.closebtn{
+  position: absolute;
+  top: 5%;
+  right: 10%;
+  border: 0;
+  background: #000;
+  color: #fff;
+  font-size: 2rem;
+  height: 44px;
+  width: 44px;
+  align-items: self-end;
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+
+.input-custom{
+  position: relative;
+}
+
+.custom-btn{
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.appData {
+  margin: 16px 0;
+  padding: 20px 15px;
+  background: #f7f7f7;
+  border-radius: 4px;
+  box-shadow: 3px 3px 4px 0px #0000000d;
+}
+.tr{
+  text-align: right;
+}
+
+.taskDone{
+  text-decoration: line-through;
+}
