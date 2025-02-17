@@ -1,4 +1,5 @@
 import React from 'react'
+import moment from 'moment'
 import 'boxicons'
 
 const TodoTest = () => {
@@ -14,6 +15,22 @@ const TodoTest = () => {
   //Edit todo item
   const [editIndex, setEditIndex] = React.useState(null)
   const [currentValue, setCurrentValue] = React.useState('')
+
+  //Timestamp
+  const [timeAgo, setTimeAgo] = React.useState({})
+
+ // Update timestamps every minute
+ React.useEffect(() => {
+        const interval = setInterval(() => {
+          const updatedTimes = {}
+          todo.forEach((item, index) => {
+            updatedTimes[index] = moment(item.createdAt).fromNow()
+          })
+          setTimeAgo(updatedTimes)
+        }, 60000) // Updates every 1 minute
+    
+        return () => clearInterval(interval)
+ }, [todo])
  
   //Handle form submithandler
   const submitHandler = (e) => {
@@ -37,7 +54,7 @@ const TodoTest = () => {
             setEditIndex(null)
             setCurrentValue('')
            }else{
-            const getTodo = [{todoList: currentValue, status:false},...todo]
+            const getTodo = [{todoList: currentValue, status:false, createdAt: new Date().toISOString()},...todo]
             setTodo(getTodo)
             setCurrentValue('')
            }
@@ -118,7 +135,7 @@ const TodoTest = () => {
                             className={`cursor-pointer font-semibold sm:text-md text-sm ${item.status ? 'line-through text-gray-500' : 'text-gray-800 '}`}> {item.todoList} </h3>
                         </div>
                         <div className='flex items-center justify-center gap-2 bg-gray-500/70 border-1 border-white leading-3 rounded-full px-3 py-1'>
-
+                            <span className='text-xs text-gray-200'>{timeAgo[index] || moment(item.createdAt).fromNow()}</span>
                             <button onClick={()=>editTodoIndex(index)}>
                                 <box-icon type='solid' name='edit' color='white'></box-icon>
                             </button>
