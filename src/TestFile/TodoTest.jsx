@@ -135,7 +135,7 @@ const TodoTest = () => {
                             className={`cursor-pointer font-semibold sm:text-md text-sm ${item.status ? 'line-through text-gray-500' : 'text-gray-800 '}`}> {item.todoList} </h3>
                         </div>
                         <div className='flex items-center justify-center gap-2 bg-gray-500/70 border-1 border-white leading-3 rounded-full px-3 py-1'>
-                            <span className='text-xs text-gray-200'>{timeAgo[index] || moment(item.createdAt).fromNow()}</span>
+                            <span className='sm:text-xs text-[8px] text-gray-200'>{timeAgo[index] || moment(item.createdAt).fromNow()}</span>
                             <button onClick={()=>editTodoIndex(index)}>
                                 <box-icon type='solid' name='edit' color='white'></box-icon>
                             </button>
